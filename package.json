@@ -4,7 +4,7 @@
   "description": "GET LEAN B*TCH — A gorgeous terminal diet tracker",
   "type": "module",
   "bin": {
-    "dietcli": "./dist/index.js"
+    "diet": "./diet"
   },
   "scripts": {
     "dev": "node --import tsx/esm src/index.tsx",

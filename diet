@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+import { spawn } from 'child_process';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const projectRoot = __dirname;
+const script = join(projectRoot, 'src/index.tsx');
+
+const proc = spawn('node', ['--import', 'tsx/esm', script], {
+  stdio: 'inherit',
+  cwd: projectRoot,
+  env: { ...process.env, NODE_PATH: join(projectRoot, 'node_modules') }
+});
+
+proc.on('exit', (code) => process.exit(code || 0));
