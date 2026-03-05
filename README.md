@@ -4,7 +4,7 @@ a dead simple terminal app for tracking what you eat. no fancy dashboards, no ac
 
 built this because i kept eating garbage and needed something to keep me honest. if you log it, you think twice before eating that 3rd slice of pizza.
 
-## install
+## Install
 
 ```bash
 npm install -g dietcli
@@ -18,7 +18,7 @@ diet
 
 that's it.
 
-## screenshots
+## Screenshots
 
 ![screenshot1](screenshots/1.png)
 
@@ -26,7 +26,7 @@ that's it.
 
 ![screenshot3](screenshots/3.png)
 
-## dev
+## Dev
 
 ```bash
 git clone https://github.com/hlibstrochkovskyi/diet.git
@@ -35,6 +35,6 @@ npm install
 npm run dev
 ```
 
-## license
+## License
 
 MIT
