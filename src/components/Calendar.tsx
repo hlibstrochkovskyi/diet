@@ -53,7 +53,7 @@ export default function Calendar({ year, month }: CalendarProps): React.ReactEle
                 </Box>
 
                 {/* Day Headers */}
-                <Box flexDirection="row" paddingTop={0} paddingBottom={1} borderBottomStyle="single" borderColor={colors.border}>
+                <Box flexDirection="row" paddingTop={0} paddingBottom={1} borderBottomColor={colors.border}>
                     {DAY_NAMES.map((name, i) => {
                         const color = i >= 5 ? colors.alcohol : colors.textPrimary;
                         return (

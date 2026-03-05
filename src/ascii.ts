@@ -42,18 +42,23 @@ const pixelMascot = [
     "         KKKKKKK         KKKKKKK       "
 ];
 
-const colorMap: Record<string, chalk.Chalk> = {
-    ' ': chalk.bgHex(''), // transparent
-    'W': chalk.bgHex('#FFFFFF').hex('#FFFFFF'), // white
-    'K': chalk.bgHex('#111111').hex('#111111'), // black
-    'R': chalk.bgHex('#D32F2F').hex('#D32F2F'), // red
-    'D': chalk.bgHex('#B71C1C').hex('#B71C1C'), // dark red
-    'L': chalk.bgHex('#EF5350').hex('#EF5350'), // light red / highlight
-    'P': chalk.bgHex('#E57373').hex('#E57373'), // pink blush
-    'b': chalk.bgHex('#795548').hex('#795548'), // stem brown
-    'd': chalk.bgHex('#4E342E').hex('#4E342E'), // stem shadow
-    'g': chalk.bgHex('#4CAF50').hex('#4CAF50'), // leaf light green
-    'h': chalk.bgHex('#2E7D32').hex('#2E7D32'), // leaf dark green
+// @ts-ignore - chalk v5 compatibility
+const bgHex = chalk.bgHex;
+// @ts-ignore - chalk v5 compatibility  
+const hex = chalk.hex;
+
+const colorMap: Record<string, (text: string) => string> = {
+    ' ': (text) => text, // transparent
+    'W': (text) => bgHex('#FFFFFF')(hex('#FFFFFF')(text)), // white
+    'K': (text) => bgHex('#111111')(hex('#111111')(text)), // black
+    'R': (text) => bgHex('#D32F2F')(hex('#D32F2F')(text)), // red
+    'D': (text) => bgHex('#B71C1C')(hex('#B71C1C')(text)), // dark red
+    'L': (text) => bgHex('#EF5350')(hex('#EF5350')(text)), // light red / highlight
+    'P': (text) => bgHex('#E57373')(hex('#E57373')(text)), // pink blush
+    'b': (text) => bgHex('#795548')(hex('#795548')(text)), // stem brown
+    'd': (text) => bgHex('#4E342E')(hex('#4E342E')(text)), // stem shadow
+    'g': (text) => bgHex('#4CAF50')(hex('#4CAF50')(text)), // leaf light green
+    'h': (text) => bgHex('#2E7D32')(hex('#2E7D32')(text)), // leaf dark green
 };
 
 export function getMascot(): string {
