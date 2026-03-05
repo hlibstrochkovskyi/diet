@@ -1,0 +1,36 @@
+{
+  "name": "dietcli",
+  "version": "0.1.0",
+  "description": "GET LEAN B*TCH — A gorgeous terminal diet tracker",
+  "type": "module",
+  "bin": {
+    "dietcli": "./dist/index.js"
+  },
+  "scripts": {
+    "dev": "node --import tsx/esm src/index.tsx",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dietcli": "node --import tsx/esm src/index.tsx"
+  },
+  "dependencies": {
+    "@inkjs/ui": "^2.0.0",
+    "chalk": "^5.6.2",
+    "date-fns": "^4.1.0",
+    "ink": "^6.8.0",
+    "react": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "@types/react": "^19.2.14",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "keywords": [
+    "cli",
+    "diet",
+    "tracker",
+    "tui",
+    "terminal"
+  ],
+  "license": "MIT"
+}
